@@ -13,7 +13,7 @@ module.exports = function(){
                         return
                     }
 
-                    request(`http://${_address}:5656/v1/STATUS`, (error, response, body) => {
+                    request(`http://${address}:5656/v1/STATUS`, (error, response, body) => {
                         if (error != undefined) {
                             reject(error)
                             return
