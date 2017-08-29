@@ -7,13 +7,13 @@ module.exports = function(){
     return {
         set_master_url : () => {
             return new Promise((resolve, reject) => {
-                dns.lookup("www.google.co.kr", (error, address, family) => {
+                dns.lookup("mr-redis.marathon.mesos", (error, address, family) => {
                     if (error != undefined) {
                         reject(error)
                         return
                     }
 
-                    request(`http://${address}:5656/v1/STATUS`, (error, response, body) => {
+                    request(`${_address}:5656/v1/STATUS`, (error, response, body) => {
                         if (error != undefined) {
                             reject(error)
                             return
